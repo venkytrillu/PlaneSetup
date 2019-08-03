@@ -102,52 +102,17 @@ public class PlaneCreater : MonoBehaviour
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-           // print(hit.transform.gameObject.name);
-
+          
             if(hit.transform.gameObject.name==Tags.LeftBottomPlane)
             {
                 ApplyFading(hit, leftPlaneBackground);
-                //  hit.transform.GetComponent<MeshRenderer>().material = Resources.Load("Mat") as Material;
-                // hit.transform.GetComponent<MeshRenderer>().material.mainTexture = leftPlaneBackground;
-
-                // t = t - Time.deltaTime;
-                // Renderer ren = hit.transform.gameObject.GetComponent<Renderer>();
-
-                // ren.material.SetFloat("_Mode", 2);
-                //ren.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-                //  ren.material.SetColor("_Color", ColorFade());
-                //hit.transform.gameObject.SetActive(false);
-                //ren.material.mainTexture = leftPlaneBackground;
-                //hit.transform.gameObject.SetActive(true);
-                // Color c1 = new Color(ren.material.color.r, ren.material.color.g, ren.material.color.b, 0.25f);
-                // ren.material.SetColor("_Color", ColorFade());
-                // color = new Color(1, 1, 1, 1);
-                // ren.material.DisableKeyword("_ALPHATEST_ON");
-                // ColorFading(ren);
-                //  print(hit.transform.gameObject.GetComponent<MeshRenderer>().sharedMaterial.color);
+                
 
             }
            else if (hit.transform.gameObject.name == Tags.RightBottomPlane)
             {
                 ApplyFading(hit, rightPlaneBackground);
-                //hit.transform.GetComponent<MeshRenderer>().material = Resources.Load("Mat") as Material;
-               // hit.transform.GetComponent<MeshRenderer>().material.mainTexture = rightPlaneBackground;
-
-               // t = t - Time.deltaTime;
-               // Renderer ren = hit.transform.gameObject.GetComponent<Renderer>();
-
-                // ren.material.SetFloat("_Mode", 2);
-                //ren.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-               // ren.material.SetColor("_Color", ColorFade());
-                //hit.transform.gameObject.SetActive(false);
-                //ren.material.mainTexture = leftPlaneBackground;
-                //hit.transform.gameObject.SetActive(true);
-                // Color c1 = new Color(ren.material.color.r, ren.material.color.g, ren.material.color.b, 0.25f);
-                // ren.material.SetColor("_Color", ColorFade());
-                // color = new Color(1, 1, 1, 1);
-                // ren.material.DisableKeyword("_ALPHATEST_ON");
-                // ColorFading(ren);
-                //  print(hit.transform.gameObject.GetComponent<MeshRenderer>().sharedMaterial.color);
+               
 
             }
            else if (hit.transform.gameObject.name == Tags.TopHalfPlane)
@@ -205,6 +170,7 @@ public class PlaneCreater : MonoBehaviour
     }
     private void Update()
     {
+        if(Input.GetMouseButton(0))
         Raycast();
     }
 
